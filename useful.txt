@@ -1,0 +1,1 @@
+pandoc -f mediawiki -t markdown -s request-fields-wiki -o request-fields-wiki.md

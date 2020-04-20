@@ -1,0 +1,237 @@
+==Request fields==
+===Standard request fields===
+{| class="wikitable sortable"
+|+
+|-
+! Name
+! class="unsortable" | Description
+! class="unsortable" | Example
+! Status
+!Standard
+|-
+| A-IM || Acceptable instance-manipulations for the request.<ref name="rfc3229">{{cite IETF|rfc=3229}}</ref>||<code>A-IM: feed</code> || Permanent
+|{{IETF RFC|3229}}
+|-
+| Accept || [[Media type|Media type(s)]] that is/are acceptable for the response. See [[Content negotiation]]. || <code>Accept: text/html</code> || Permanent
+|{{IETF RFC|2616|7231}}
+|-
+| Accept-Charset || Character sets that are acceptable. || <code>Accept-Charset: utf-8</code> || Permanent
+|{{IETF RFC|2616|}}
+|- id="Accept-Datetime"
+| Accept-Datetime || Acceptable version in time. ||<code>Accept-Datetime: Thu, 31 May 2007 20:35:00 GMT</code>|| Provisional
+|{{IETF RFC|7089|}}
+|- id="Accept-Encoding"
+| Accept-Encoding || List of acceptable encodings. See [[HTTP compression]]. ||<code>Accept-Encoding: gzip, deflate</code>|| Permanent
+|{{IETF RFC|2616|7231}}
+|- id="Accept-Language"
+| Accept-Language || List of acceptable human languages for response. See [[Content negotiation]]. ||<code>Accept-Language: en-US</code>|| Permanent
+|{{IETF RFC|2616|7231}}
+|- id="access-control-request-header"
+| {{nowrap|Access-Control-Request-Method,<br />Access-Control-Request-Headers}}<ref name="CORS">{{cite web|url=https://www.w3.org/TR/cors/ |title=Cross-Origin Resource Sharing |accessdate=2017-07-24}}</ref>|| Initiates a request for [[cross-origin resource sharing]] with [[#origin-request-header|Origin]] (below). || <code>Access-Control-Request-Method: GET</code> || {{nowrap|Permanent: standard}}
+|
+|-
+| Authorization || Authentication credentials for [[Basic access authentication|HTTP authentication]]. || <code>Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</code> || Permanent
+|
+|-
+| [[Cache-Control]] || Used to specify directives that ''must'' be obeyed by all caching mechanisms along the request-response chain. || <code>Cache-Control: no-cache</code> || Permanent
+|
+|-
+| Connection || Control options for the current connection and list of hop-by-hop request fields.<ref name="rfc7230_connection">{{cite web
+|url=http://tools.ietf.org/html/rfc7230#section-6.1
+|title=Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing
+|publisher=[[IETF]]
+|date=June 2014
+|accessdate=2014-12-19
+}}</ref>
+Must not be used with HTTP/2.<ref name="rfc7540_connection">{{cite web
+|url=https://tools.ietf.org/html/rfc7540#section-8.1.2.2
+|title=Hypertext Transfer Protocol Version 2 (HTTP/2)
+|publisher=[[IETF]]
+|date=May 2015
+|accessdate=2017-06-06
+}}</ref>
+|| <code>Connection: keep-alive</code>
+<code>[[HTTP/1.1 Upgrade header|Connection: Upgrade]]</code> 
+|| Permanent
+|
+|-
+| Content-Encoding || The type of encoding used on the data. See [[HTTP compression]]. || <code>Content-Encoding: gzip</code> || Permanent
+|
+|-
+| Content-Length || The length of the request body in [[Octet (computing)|octets]] (8-bit bytes). || <code>Content-Length: 348</code> || Permanent
+|
+|-
+| Content-MD5 || A [[Base64]]-encoded binary [[MD5]] sum of the content of the request body. || <code>Content-MD5: Q2hlY2sgSW50ZWdyaXR5IQ==</code> || Obsolete<ref name="tools.ietf.org">{{cite web|url=http://tools.ietf.org/html/rfc7231#appendix-B|title=Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content|accessdate=2015-06-03}}</ref>
+|
+|-
+| Content-Type || The [[Media type]] of the body of the request (used with POST and PUT requests). || <code>Content-Type: application/x-www-form-urlencoded</code> || Permanent
+|
+|-
+| Cookie || An [[HTTP cookie]] previously sent by the server with <tt>[[#innerlink set-cookie|Set-Cookie]]</tt> (below). || <code>Cookie: $Version=1; Skin=new;</code> || Permanent: standard
+|
+|- id="Content-Length"
+|-
+| Date || The date and time at which the message was originated (in "HTTP-date" format as defined by [http://tools.ietf.org/html/rfc7231#section-7.1.1.1 RFC 7231 Date/Time Formats]). || <code>Date: Tue, 15 Nov 1994 08:12:31 GMT</code> || Permanent
+|
+|-
+| Expect || Indicates that particular server behaviors are required by the client. || <code>Expect: 100-continue</code> || Permanent
+|
+|-
+| Forwarded || Disclose original information of a client connecting to a web server through an HTTP proxy.<ref>{{cite web
+|url=http://tools.ietf.org/html/rfc7239#section-1
+|title=Forwarded HTTP Extension: Introduction
+|publisher=[[IETF]]
+|date=June 2014
+|accessdate=2016-01-07
+}}
+</ref>
+|| <code>Forwarded: for=192.0.2.60;proto=http;by=203.0.113.43</code> <code>Forwarded: for=192.0.2.43, for=198.51.100.17</code> || Permanent
+|
+|-
+| From || The email address of the user making the request. || <code>From: user@example.com</code> || Permanent
+|
+|-
+| Host || The domain name of the server (for [[virtual hosting]]), and the [[List of TCP and UDP port numbers|TCP port]] number on which the server is listening. The [[Port (computer networking)|port]] number may be omitted if the port is the standard port for the service requested.
+Mandatory since HTTP/1.1.<ref>{{cite web
+|url=http://tools.ietf.org/html/rfc7230#section-5.4
+|title=Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing
+|publisher=[[IETF]]
+|date=June 2014
+|accessdate=2014-07-24
+}}</ref>
+If the request is generated directly in HTTP/2, it should not be used.<ref name="rfc7540_Request_Pseudo_Header_Fields">{{cite web
+|url=https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+|title=Hypertext Transfer Protocol Version 2 (HTTP/2)
+|publisher=[[IETF]]
+|date=May 2015
+|accessdate=2017-06-06
+}}</ref>
+|| <code>Host: en.wikipedia.org:8080</code>
+<code>Host: en.wikipedia.org</code>
+|| Permanent
+|
+|-
+|HTTP2-Settings
+|A request that upgrades from HTTP/1.1 to HTTP/2 MUST include exactly one <code>HTTP2-Setting</code> header field. The <code>HTTP2-Settings</code> header field is a connection-specific header field that includes parameters that govern the HTTP/2 connection, provided in anticipation of the server accepting the request to upgrade.<ref>{{Cite web|url=https://www.iana.org/assignments/message-headers/message-headers.xml|title=Message Headers|website=www.iana.org|access-date=2018-11-26}}</ref><ref>{{Cite web|url=https://httpwg.org/specs/rfc7540.html#Http2SettingsHeader|title=Hypertext Transfer Protocol Version 2 (HTTP/2)|website=httpwg.org|language=en|access-date=2019-02-22|date=2015-05-30}}</ref>
+|<code>HTTP2-Settings: token64</code>
+|Permanent: standard
+|
+|-
+| If-Match || Only perform the action if the client supplied entity matches the same entity on the server. This is mainly for methods like PUT to only update a resource if it has not been modified since the user last updated it. || <code>If-Match: "737060cd8c284d8af7ad3082f209582d"</code> || Permanent
+|
+|-
+| If-Modified-Since || Allows a ''304 Not Modified'' to be returned if content is unchanged. || <code>If-Modified-Since: Sat, 29 Oct 1994 19:43:31 GMT</code> || Permanent
+|
+|-
+| If-None-Match || Allows a ''304 Not Modified'' to be returned if content is unchanged, see [[HTTP ETag]]. || <code>If-None-Match: "737060cd8c284d8af7ad3082f209582d"</code> || Permanent
+|
+|-
+| If-Range || If the entity is unchanged, send me the part(s) that I am missing; otherwise, send me the entire new entity. || <code>If-Range: "737060cd8c284d8af7ad3082f209582d"</code> || Permanent
+|
+|-
+| style=white-space:nowrap | If-Unmodified-Since || Only send the response if the entity has not been modified since a specific time. || <code>If-Unmodified-Since: Sat, 29 Oct 1994 19:43:31 GMT</code> || Permanent
+|
+|-
+| Max-Forwards || Limit the number of times the message can be forwarded through proxies or gateways. || <code>Max-Forwards: 10</code> || Permanent
+|
+|- id="origin-request-header"
+| Origin<ref name="CORS" /> || Initiates a request for [[cross-origin resource sharing]] (asks server for [[#access-control-response-headers|Access-Control-*]] response fields). || <code>Origin: <nowiki>http://www.example-social-network.com</nowiki></code> || Permanent: standard
+|
+|-
+| Pragma || Implementation-specific fields that may have various effects anywhere along the request-response chain. || <code>[[#Avoiding caching|Pragma: no-cache]]</code> || Permanent
+|
+|-
+| Proxy-Authorization || Authorization credentials for connecting to a proxy. || <code>Proxy-Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</code> || Permanent
+|
+|- id="range-request-header"
+| {{anchor|Range}} Range || Request only part of an entity.  Bytes are numbered from 0.  See [[Byte serving]]. || <code>Range: bytes=500-999</code> || Permanent
+|
+|-
+| [[HTTP referer|Referer]]{{sic}} || This is the address of the previous web page from which a link to the currently requested page was followed. (The word "referrer" has been misspelled in the RFC as well as in most implementations to the point that it has become standard usage and is considered correct terminology) || <code><nowiki>Referer: http://en.wikipedia.org/wiki/Main_Page</nowiki></code> || Permanent
+|
+|- id="te-request-header"
+| TE || The transfer encodings the user agent is willing to accept: the same values as for the response header field Transfer-Encoding can be used, plus the "trailers" value (related to the "[[chunked transfer encoding|chunked]]" transfer method) to notify the server it expects to receive additional fields in the trailer after the last, zero-sized, chunk. 
+Only <code>trailers</code> is supported in HTTP/2.<ref name="rfc7540_connection"></ref>
+|| <code>TE: trailers, [[deflate]]</code> || Permanent
+|
+|-
+|Trailer
+|The Trailer general field value indicates that the given set of header fields is present in the trailer of a message encoded with [[chunked transfer coding]].
+|<code>Trailer: Max-Forwards</code>
+|Permanent
+|
+|-
+|Transfer-Encoding
+|The form of encoding used to safely transfer the entity to the user. [http://www.iana.org/assignments/http-parameters Currently defined methods] are: [[chunked transfer encoding|chunked]], compress, deflate, gzip, identity. 
+Must not be used with HTTP/2.<ref name="rfc7540_connection" />
+|<code>Transfer-Encoding: chunked</code>
+|Permanent
+|
+|-
+| User-Agent || The [[user agent string]] of the user agent. || <code>User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0</code> || Permanent
+|
+|-
+| [[Upgrade header|Upgrade]] || Ask the server to upgrade to another protocol.
+Must not be used in HTTP/2.<ref name="rfc7540_connection"></ref>
+|| <code>Upgrade: h2c, HTTPS/1.3, IRC/6.9, RTA/x11, websocket</code> || Permanent
+|
+|-
+| Via || Informs the server of proxies through which the request was sent. || <code>Via: 1.0 fred, 1.1 example.com (Apache/1.1)</code> || Permanent
+|
+|-
+| Warning || A general warning about possible problems with the entity body. || <code>Warning: 199 Miscellaneous warning</code> || Permanent
+|
+|}
+
+{{anchor|Common non-standard request headers}}
+
+===Common non-standard request fields===
+
+{| class="wikitable sortable" style="width: 100%; clear:right;"
+|-
+! Field name
+! class="unsortable" | Description
+! class="unsortable" | Example
+|-
+|{{nowrap|Upgrade-Insecure-Requests}}<ref>{{cite web|title=Upgrade Insecure Requests - W3C Candidate Recommendation|url=https://www.w3.org/TR/upgrade-insecure-requests/#preference|website=W3C|accessdate=14 January 2016|date=8 October 2015}}</ref> || Tells a server which (presumably in the middle of a HTTP -> HTTPS migration) hosts mixed content that the client would prefer redirection to HTTPS and can handle <code>Content-Security-Policy: upgrade-insecure-requests</code> 
+Must not be used with HTTP/2<ref name="rfc7540_connection" />
+|| <code class="nowrap">Upgrade-Insecure-Requests: 1</code>
+|- id="Requested-With"
+| style=white-space:nowrap | X-Requested-With || Mainly used to identify [[Ajax (programming)|Ajax]] requests. Most [[JavaScript framework]]s send this field with value of <code>XMLHttpRequest</code> || <code> X-Requested-With: XMLHttpRequest</code>
+|-
+| [[Do Not Track|DNT]]<ref>{{cite web|url=http://blog.sidstamm.com/2011/01/try-out-do-not-track-http-header.html |title=Try out the "Do Not Track" HTTP header |accessdate=2011-01-31}}</ref> || Requests a web application to disable their tracking of a user. This is Mozilla's version of the X-Do-Not-Track header field (since [[Mozilla Firefox 4|Firefox 4.0]] Beta 11).  [[Safari (web browser)|Safari]] and [[Internet Explorer 9|IE9]] also have support for this field.<ref>{{cite web|url=http://blogs.msdn.com/b/ie/archive/2011/03/14/web-tracking-protection-minimum-standards-and-opportunities-to-innovate.aspx |title=Web Tracking Protection: Minimum Standards and Opportunities to Innovate |accessdate=2011-03-24}}</ref>  On March 7, 2011, a draft proposal was submitted to IETF.<ref>IETF [http://tools.ietf.org/html/draft-mayer-do-not-track-00 Do Not Track: A Universal Third-Party Web Tracking Opt Out] March 7, 2011</ref> The [[World Wide Web Consortium|W3C]] Tracking Protection Working Group is producing a specification.<ref>W3C [http://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html Tracking Preference Expression (DNT)], January 26, 2012</ref>|| <code>DNT: 1</code> (Do Not Track Enabled)
+<code>DNT: 0</code> (Do Not Track Disabled)
+|-
+| style=white-space:nowrap | [[X-Forwarded-For]]<ref>{{cite web|url=http://wiki.squid-cache.org/SquidFaq/ConfiguringSquid#head-3518b69c63e221cc3cd7885415e365ffaf3dd27f |title=SquidFaq/ConfiguringSquid - Squid Web Proxy Wiki |author=Amos Jeffries |date=2010-07-02 |accessdate=2009-09-10}}</ref> || A [[de facto standard|''de facto'' standard]] for identifying the originating IP address of a client connecting to a web server through an HTTP proxy or load balancer. Superseded by ''Forwarded'' header. || <code> X-Forwarded-For: client1, proxy1, proxy2
+X-Forwarded-For: 129.78.138.66, 129.78.64.103</code>
+|-
+| X-Forwarded-Host<ref>{{cite web|url=http://httpd.apache.org/docs/2.2/mod/mod_proxy.html#x-headers |title=mod_proxy - Apache HTTP Server Version 2.2|author=The Apache Software Foundation|accessdate=2014-11-12}}</ref> || A [[de facto standard|''de facto'' standard]] for identifying the original host requested by the client in the <code>Host</code> HTTP request header, since the host name and/or port of the reverse proxy (load balancer) may differ from the origin server handling the request. Superseded by ''Forwarded'' header. || <code>X-Forwarded-Host: en.wikipedia.org:8080</code>
+<code>X-Forwarded-Host: en.wikipedia.org</code>
+|-
+| X-Forwarded-Proto<ref>{{cite web|url=http://www.geekisp.com/faq/6_65_en.html |title=How do I adjust my SSL site to work with GeekISP's loadbalancer? |author=Dave Steinberg |date=2007-04-10 |accessdate=2010-09-30}}</ref> || A [[de facto standard|''de facto'' standard]] for identifying the originating protocol of an HTTP request, since a reverse proxy (or a load balancer) may communicate with a web server using HTTP even if the request to the reverse proxy is HTTPS.  An alternative form of the header (X-ProxyUser-Ip) is used by Google clients talking to Google servers. Superseded by ''Forwarded'' header. || <code>X-Forwarded-Proto: https</code>
+|-
+| Front-End-Https<ref>{{cite web|url=https://technet.microsoft.com/en-us/library/aa997519(v=exchg.65).aspx |title=Helping to Secure Communication: Client to Front-End Server |date=2006-07-27 |accessdate=2012-04-23}}</ref> || Non-standard header field used by Microsoft applications and load-balancers || <code>Front-End-Https: on</code>
+|-
+| X-Http-Method-Override<ref>{{cite web|url=https://opensocial.github.io/spec/2.5.1/Core-API-Server.xml#rfc.section.2.1.1.1 |title=OpenSocial Core API Server Specification 2.5.1 |accessdate=2014-10-08}}</ref> || Requests a web application to override the method specified in the request (typically POST) with the method given in the header field (typically PUT or DELETE). This can be used when a user agent or firewall prevents PUT or DELETE methods from being sent directly (note that this is either a bug in the software component, which ought to be fixed, or an intentional configuration, in which case bypassing it may be the wrong thing to do). || <code>X-HTTP-Method-Override: DELETE</code>
+|-
+| X-ATT-DeviceId<ref>{{cite web|url=http://developer.att.com/developer/forward.jsp?passedItemId=5300270 |title=ATT Device ID |accessdate=2012-01-14}}</ref> || Allows easier parsing of the MakeModel/Firmware that is usually found in the User-Agent String of AT&T Devices|| <code>X-Att-Deviceid: GT-P7320/P7320XXLPG</code>
+|-
+| X-Wap-Profile<ref>{{cite web|url=http://www.developershome.com/wap/detection/detection.asp?page=profileHeader |title=WAP Profile |accessdate=2012-01-14}}</ref> || Links to an XML file on the Internet with a full description and details about the device currently connecting. In the example to the right is an XML file for an AT&T Samsung Galaxy S2.|| <code>x-wap-profile: http://wap.samsungmobile.com/uaprof/SGH-I777.xml</code>
+|-
+| Proxy-Connection<ref>{{cite web |url=https://jdebp.eu/FGA/web-proxy-connection-header.html |title=The Proxy-Connection: header is a mistake in how some web browsers use HTTP. |accessdate=2018-01-16| last=de Boyne Pollard| first=Jonathan|year=2007 }}</ref> || Implemented as a misunderstanding of the HTTP specifications. Common because of mistakes in implementations of early HTTP versions. Has exactly the same functionality as standard Connection field.
+Must not be used with HTTP/2.<ref name="rfc7540_connection" />
+|| <code>Proxy-Connection: keep-alive</code>
+|-
+| X-UIDH<ref>{{cite web|url=https://www.eff.org/deeplinks/2014/11/verizon-x-uidh|title=Verizon Injecting Perma-Cookies to Track Mobile Customers, Bypassing Privacy Controls|publisher=[[Electronic Frontier Foundation]]|accessdate=2014-01-19}}</ref><ref>{{cite web|url=http://lessonslearned.org/sniff|title=Checking known AT&T, Verizon, Sprint, Bell Canada & Vodacom Unique Identifier beacons|accessdate=2014-01-19}}</ref><ref>{{cite web|url=https://www.washingtonpost.com/business/technology/verizon-atandt-tracking-their-users-with-super-cookies/2014/11/03/7bbbf382-6395-11e4-bb14-4cfea1e742d5_story.html|title=Verizon, AT&T tracking their users with 'supercookies'|author=Craig Timberg|publisher=The Washington Post|accessdate=2014-01-19}}</ref> || Server-side [[Deep packet inspection|deep packet insertion]] of a unique ID identifying customers of [[Verizon Wireless]]; also known as "perma-cookie" or "supercookie" || <code>X-UIDH: ...</code>
+|-
+| X-Csrf-Token<ref>{{cite web|url=https://help.sap.com/saphelp_nw74/helpdata/en/b3/5c22518bc72214e10000000a44176d/content.htm|title=SAP Cross-Site Request Forgery Protection|publisher=[[SAP SE]]|accessdate=2015-01-20}}</ref> || Used to prevent [[cross-site request forgery]]. Alternative header names are: <code>X-CSRFToken</code><ref>{{cite web|url=https://docs.djangoproject.com/en/1.7/ref/contrib/csrf/|title=Django Cross Site Request Forgery protection|publisher=[[Django (web framework)]]|accessdate=2015-01-20|archive-url=https://web.archive.org/web/20150120134602/https://docs.djangoproject.com/en/1.7/ref/contrib/csrf/|archive-date=January 20, 2015|url-status=dead}}</ref> and <code>X-XSRF-TOKEN</code><ref>{{cite web|url=https://docs.angularjs.org/api/ng/service/$http#cross-site-request-forgery-xsrf-protection|title=Angular Cross Site Request Forgery (XSRF) Protection|publisher=[[AngularJS]]|accessdate=2015-01-20}}</ref> || <code>X-Csrf-Token: i8XNjC4b8KVok4uw5RftR38Wgp2BFwql</code>
+|-
+|X-Request-ID<ref name="stackoverflow1">{{cite web|url=https://stackoverflow.com/questions/25433258/what-is-the-x-request-id-http-header|title=What is the X-REQUEST-ID http header?|website=stackoverflow.com|access-date=2016-05-19}}</ref><ref>{{cite web|url=https://devcenter.heroku.com/articles/http-request-id|title=HTTP Request IDs|website=devcenter.heroku.com|access-date=2018-02-06}}</ref>,
+X-Correlation-ID<ref>{{Cite news|url=https://blog.rapid7.com/2016/12/23/the-value-of-correlation-ids/|title=The Value of Correlation IDs|date=2016-12-23|work=Rapid7 Blog|access-date=2018-04-13|language=en}}</ref><ref>{{Cite web|url=http://hilton.org.uk/blog/microservices-correlation-id|title=Correlation IDs for microservices architectures - Peter Hilton|last=Hilton|first=Peter|website=hilton.org.uk|language=en|access-date=2018-04-13}}</ref>
+|Correlates HTTP requests between a client and server.
+|<code class="nowrap">X-Request-ID: f058ebd6-02f7-4d3f-942e-904344e8cde5</code>
+|-
+|Save-Data
+|The Save-Data client hint request header available in Chrome, Opera, and Yandex browsers lets developers deliver lighter, faster applications to users who opt-in to data saving mode in their browser.
+|<code class="nowrap">Save-Data: on</code>
+|}

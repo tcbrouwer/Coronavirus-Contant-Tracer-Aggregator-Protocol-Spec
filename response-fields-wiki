@@ -1,0 +1,205 @@
+==Response fields==
+===Standard response fields===
+{| class="wikitable sortable" style="width: 100%"
+|-
+! Field name
+! class="unsortable" | Description
+! class="unsortable" | Example
+! Status
+!Standard
+|- id="access-Control-response-headers"
+| {{nowrap|Access-Control-Allow-Origin,<br/>Access-Control-Allow-Credentials,<br />Access-Control-Expose-Headers,<br />Access-Control-Max-Age,<br />Access-Control-Allow-Methods,<br />Access-Control-Allow-Headers}}<ref name="CORS" />
+|| Specifying which web sites can participate in [[cross-origin resource sharing]] || <code>Access-Control-Allow-Origin: *</code> || {{nowrap|Permanent: standard}}
+|
+|- id="accept-patch-response-header"
+| Accept-Patch<ref>{{cite web|url=http://tools.ietf.org/html/rfc5789#section-3.1 |title=RFC 5789 |accessdate=2014-12-24}}</ref> || Specifies which patch document formats this server supports || <code>Accept-Patch: text/example;charset=utf-8</code> || Permanent
+|
+|- id="accept-ranges-response-header"
+| Accept-Ranges || What partial content range types this server supports via [[byte serving]]|| <code>Accept-Ranges: bytes</code> || Permanent
+|
+|-
+| Age || The age the object has been in a [[proxy cache]] in seconds || <code>Age: 12</code> || Permanent
+|
+|-
+| Allow || Valid methods for a specified resource. To be used for a ''405 Method not allowed'' || <code>Allow: GET, HEAD</code> || Permanent
+|
+|-
+| Alt-Svc<ref>{{cite web|url=https://tools.ietf.org/html/rfc7838|title=HTTP Alternative Services
+|publisher=IETF|date=April 2016|accessdate=2016-04-19}}</ref> || A server uses "Alt-Svc" header (meaning Alternative Services) to indicate that its resources can also be accessed at a different network location (host or port) or using a different protocol
+
+When using HTTP/2, servers should instead send an ALTSVC frame. <ref>{{cite web|url=https://tools.ietf.org/html/rfc7838#section-3|title=HTTP Alternative Services, section 3
+|publisher=IETF|date=April 2016|accessdate=2017-06-08}}</ref>
+|| <code>Alt-Svc: http/1.1="http2.example.com:8001"; ma=7200</code> || Permanent
+|
+|-
+| [[Cache-Control]] || Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds|| <code>Cache-Control: max-age=3600</code> || Permanent
+|
+|-
+| Connection || Control options for the current connection and list of hop-by-hop response fields.<ref name=rfc7230_connection /> 
+Must not be used with HTTP/2.<ref name="rfc7540_connection" />
+|| <code>Connection: close</code> || Permanent
+|
+|-
+| Content-Disposition<ref>{{cite web|url=http://tools.ietf.org/html/rfc6266 |title=RFC 6266 |accessdate=2015-03-13}}</ref>  || An opportunity to raise a "File Download" dialogue box for a known MIME type with binary format or suggest a filename for dynamic content. Quotes are necessary with special characters. || <code>Content-Disposition: attachment; filename="fname.ext"</code> || Permanent
+|
+|-
+| Content-Encoding || The type of encoding used on the data. See [[HTTP compression]]. || <code>Content-Encoding: gzip</code> || Permanent
+|
+|-
+| Content-Language || The natural language or languages of the intended audience for the enclosed content<ref>{{cite web|url=https://tools.ietf.org/html/rfc7231#section-3.1.3.2 |title=RFC 7231 - Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content |publisher=Tools.ietf.org |date= |accessdate=2017-12-11}}</ref> || <code>Content-Language: da</code> || Permanent
+|
+|- id="content-length-response-header"
+| Content-Length || The length of the response body in [[Octet (computing)|octets]] (8-bit bytes)|| <code>Content-Length: 348</code> || Permanent
+|
+|-
+| Content-Location || An alternate location for the returned data || <code>Content-Location: /index.htm</code> || Permanent
+|
+|-
+| Content-MD5 || A [[Base64]]-encoded binary [[MD5]] sum of the content of the response || <code>Content-MD5: Q2hlY2sgSW50ZWdyaXR5IQ==</code> || Obsolete<ref name="tools.ietf.org"/>
+|
+|- id="content-range-response-header"
+| Content-Range || Where in a full body message this partial message belongs || <code>Content-Range: bytes 21010-47021/47022</code> || Permanent
+|
+|-
+| Content-Type || The [[MIME type]] of this content || <code>Content-Type: text/html; charset=utf-8</code> || Permanent
+|
+|-
+| Date || The date and time that the message was sent (in "HTTP-date" format as defined by RFC 7231) <ref>{{cite web|url=http://ronwilliams.io/blog/post/rfc7231-compliant-http-date-headers |title=RFC7231 Compliant HTTP Date Headers}}</ref> || <code>Date: Tue, 15 Nov 1994 08:12:31 GMT</code> || Permanent
+|
+|-
+| Delta-Base || Specifies the delta-encoding entity tag of the response.<ref name="rfc3229"></ref> || <code>Delta-Base: "abc"</code> || Permanent
+|
+|-
+| [[HTTP ETag|ETag]] || An identifier for a specific version of a resource, often a [[message digest]] || <code>ETag: "737060cd8c284d8af7ad3082f209582d"</code> || Permanent
+|
+|- id="Expires"
+| Expires || Gives the date/time after which the response is considered stale (in "HTTP-date" format as defined by RFC 7231) || <code>Expires: Thu, 01 Dec 1994 16:00:00 GMT</code> || Permanent: standard
+|
+|-
+| IM || Instance-manipulations applied to the response.<ref name="rfc3229"></ref> || <code>IM: feed</code> || Permanent
+|
+|-
+| Last-Modified || The last modified date for the requested object (in "HTTP-date" format as defined by RFC 7231) || <code>Last-Modified: Tue, 15 Nov 1994 12:45:26 GMT</code> || Permanent
+|
+|-
+| Link || Used to express a typed relationship with another resource, where the relation type is defined by RFC 5988 || <code>Link: &lt;/feed&gt;; rel="alternate"</code><ref name="google_canonical">[https://support.google.com/webmasters/bin/answer.py?hl=en&answer=139394 Indicate the canonical version of a URL by responding with the Link rel="canonical" HTTP header] Retrieved: 2012-02-09</ref> || Permanent
+|
+|-
+| [[HTTP location|Location]] || Used in [[URL redirection|redirection]], or when a new resource has been created. 
+|
+* Example 1: <code>Location: <nowiki>http://www.w3.org/pub/WWW/People.html</nowiki></code> 
+* Example 2: <code>Location: <nowiki>/pub/WWW/People.html</nowiki></code> 
+|| Permanent
+|
+|-
+|[[P3P]]|| This field is supposed to set [[P3P]] policy, in the form of <code>P3P:CP="your_compact_policy"</code>. However, P3P did not take off,<ref>W3C [http://www.w3.org/P3P P3P Work Suspended]</ref> most browsers have never fully implemented it, a lot of websites set this field with fake policy text, that was enough to fool browsers the existence of P3P policy and grant permissions for [[Third party cookie|third party cookies]]. || <code>P3P: CP="This is not a P3P policy! See <nowiki>https://en.wikipedia.org/wiki/Special:CentralAutoLogin/P3P</nowiki> for more info."</code> || Permanent
+|
+|-
+| Pragma || Implementation-specific fields that may have various effects anywhere along the request-response chain. || <code>Pragma: no-cache</code> || Permanent
+|
+|-
+| Proxy-Authenticate || Request authentication to access the proxy. || <code>Proxy-Authenticate: Basic</code> || Permanent
+|
+|- id="PKP"
+| Public-Key-Pins<ref>{{cite web | url=http://www.rfc-editor.org/rfc/rfc7469.txt | title=Public Key Pinning Extension for HTTP | publisher=IETF | accessdate=17 April 2015}}</ref> || [[HTTP Public Key Pinning]], announces hash of website's authentic [[Transport Layer Security|TLS]] certificate || <code>Public-Key-Pins: max-age=2592000; pin-sha256="E9CZ9INDbd+2eRQozYqqbQ2yXLVKB9+xcprMF+44U1g=";</code> || Permanent
+|
+|-
+| Retry-After || If an entity is temporarily unavailable, this instructs the client to try again later. Value could be a specified period of time (in seconds) or a HTTP-date.<ref>{{cite web|url=http://tools.ietf.org/html/rfc7231#section-7.1.3|title=Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content|accessdate=2014-07-24}}</ref>
+|
+* Example 1: <code>Retry-After: 120</code>
+* Example 2: <code>Retry-After: Fri, 07 Nov 2014 23:59:59 GMT</code>
+|
+Permanent
+|
+|-
+| Server || A name for the server || <code>Server: Apache/2.4.1 (Unix)</code> || Permanent
+|
+|-
+| id="innerlink_set-cookie" | Set-Cookie || An [[HTTP cookie]] || <code>Set-Cookie: UserID=JohnDoe; Max-Age=3600; Version=1</code> || Permanent: standard
+|
+|-
+| [[HTTP Strict Transport Security|Strict-Transport-Security]] || A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains. || <code>Strict-Transport-Security: max-age=16070400; includeSubDomains</code> || Permanent: standard
+|
+|- id="trailer-response-header"
+| Trailer || The Trailer general field value indicates that the given set of header fields is present in the trailer of a message encoded with [[chunked transfer coding]]. || <code>Trailer: Max-Forwards</code> || Permanent
+|
+|- id="transfer-encoding-response-header"
+| Transfer-Encoding || The form of encoding used to safely transfer the entity to the user. [http://www.iana.org/assignments/http-parameters Currently defined methods] are: [[chunked transfer encoding|chunked]], compress, deflate, gzip, identity. 
+Must not be used with HTTP/2.<ref name="rfc7540_connection" />
+|| <code>Transfer-Encoding: chunked</code> || Permanent
+|
+|-
+|Tk
+|Tracking Status header, value suggested to be sent in response to a DNT(do-not-track), possible values:
+ "!" — under construction
+ "?" — dynamic
+ "G" — gateway to multiple parties
+ "N" — not tracking
+ "T" — tracking
+ "C" — tracking with consent
+ "P" — tracking only if consented
+ "D" — disregarding DNT
+ "U" — updated
+|<code>Tk: ?</code>
+|Permanent
+|
+|-
+| [[Upgrade header|Upgrade]] || Ask the client to upgrade to another protocol. 
+Must not be used in HTTP/2<ref name="rfc7540_connection" />
+|| <code>Upgrade: h2c, HTTPS/1.3, IRC/6.9, RTA/x11, websocket</code> || Permanent
+|
+|-
+| Vary || Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server. ||
+* Example 1: <code>Vary: *</code>
+* Example 2: <code>Vary: Accept-Language</code>
+|| Permanent
+|
+|-
+| Via || Informs the client of proxies through which the response was sent. || <code>Via: 1.0 fred, 1.1 example.com (Apache/1.1)</code> || Permanent
+|
+|-
+| Warning || A general warning about possible problems with the entity body. || <code>Warning: 199 Miscellaneous warning</code> || Permanent
+|
+|- id="www-authenticate-response-header"
+| WWW-Authenticate || Indicates the authentication scheme that should be used to access the requested entity. || <code>WWW-Authenticate: Basic</code> || Permanent
+|
+|- id="Frame-Options"
+| X-Frame-Options<ref>{{cite web|url=https://tools.ietf.org/html/rfc7034|title=HTTP Header Field X-Frame-Options |year=2013 |publisher=IETF |accessdate=2014-06-12}}</ref> || [[Clickjacking]] protection: <tt>deny</tt> - no rendering within a frame, <tt>sameorigin</tt> - no rendering if origin mismatch, <tt>allow-from</tt> - allow from specified location, <tt>allowall</tt> - non-standard, allow from any location || <code> X-Frame-Options: deny</code> || Obsolete<ref>{{cite web|url=http://www.w3.org/TR/CSP11/#frame-ancestors-and-frame-options |title=Content Security Policy Level 2 |accessdate=2014-08-02}}</ref>
+|
+|}
+
+===Common non-standard response fields===
+
+{| class="wikitable sortable" style="width: 100%; clear:right;"
+|-
+! Field name
+! class="unsortable" | Description
+! class="unsortable" | Example
+|-
+| Content-Security-Policy,<br />X-Content-Security-Policy,<br />X-WebKit-CSP<ref>{{cite web|url=http://www.w3.org/TR/CSP/|title=Content Security Policy |publisher=W3C |year=2012|accessdate=28 April 2017}}</ref>
+|[[Content Security Policy]] definition.
+|<code class="nowrap">X-WebKit-CSP: default-src 'self'</code>
+|- id="Refresh"
+| [[HTTP refresh|Refresh]] || Used in redirection, or when a new resource has been created.  This refresh redirects after 5 seconds. Header extension introduced by Netscape and supported by most web browsers.  || <code>Refresh: 5; url=<nowiki>http://www.w3.org/pub/WWW/People.html</nowiki></code>
+|-
+| Status || [[Common Gateway Interface|CGI]] header field specifying the [[HTTP status|status]] of the HTTP response. Normal HTTP responses use a separate "Status-Line" instead, defined by RFC 7230.<ref>{{cite web|url=http://tools.ietf.org/html/rfc7230#section-3.1.2|title=Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing|accessdate=2014-07-24}}</ref> || <code>Status: 200 OK </code>
+|-
+|Timing-Allow-Origin
+|The <code>Timing-Allow-Origin</code> response header specifies origins that are allowed to see values of attributes retrieved via features of the [https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API Resource Timing API], which would otherwise be reported as zero due to cross-origin restrictions.<ref>{{Cite web|url=https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin|title=Timing-Allow-Origin|website=Mozilla Developer Network|language=en-US|access-date=2018-01-25}}</ref>
+|<code>Timing-Allow-Origin: *</code>
+<code>Timing-Allow-Origin: <origin>[, <origin>]*</code>
+|-
+|X-Content-Duration<ref>{{cite web|url=https://developer.mozilla.org/en-US/docs/Web/HTTP/Configuring_servers_for_Ogg_media#Serve_X-Content-Duration_headers |title=Configuring servers for Ogg media |date=2014-05-26 |accessdate=2015-01-03}}</ref> || Provide the duration of the audio or video in seconds; only supported by Gecko browsers || <code class="nowrap">X-Content-Duration: 42.666</code>
+|-
+| X-Content-Type-Options<ref>{{cite web|url=http://blogs.msdn.com/b/ie/archive/2008/09/02/ie8-security-part-vi-beta-2-update.aspx |title=IE8 Security Part VI: Beta 2 Update |author=Eric Lawrence |date=2008-09-03 |accessdate=2010-09-28}}</ref> || The only defined value, "nosniff", prevents [[Internet Explorer]] from MIME-sniffing a response away from the declared content-type. This also applies to [[Google Chrome]], when downloading extensions.<ref>{{cite web|url=https://code.google.com/chrome/extensions/hosting.html |title=Hosting - Google Chrome Extensions - Google Code |accessdate=2012-06-14}}</ref> || <code class="nowrap">X-Content-Type-Options: nosniff</code><ref name="whatwg-fetch-xcto">{{cite web |url=https://fetch.spec.whatwg.org/#x-content-type-options-header |title=Fetch standard |last1=van Kesteren |first1=Anne |date=2016-08-26 |website=WHATWG |access-date=2016-08-26 |url-status=live |archive-url=https://web.archive.org/web/20160826132911/https://fetch.spec.whatwg.org/#x-content-type-options-header |archive-date=2016-08-26}}</ref>
+|- id="Powered-By"
+| X-Powered-By<ref>{{cite web|url=https://stackoverflow.com/questions/1288338/why-does-asp-net-framework-add-the-x-powered-byasp-net-http-header-in-response |title=Why does ASP.NET framework add the 'X-Powered-By:ASP.NET' HTTP Header in responses? - Stack Overflow |accessdate=2010-09-30}}</ref> || Specifies the technology (e.g. ASP.NET, PHP, JBoss) supporting the web application (version details are often in <code class="nowrap">X-Runtime</code>, <code class="nowrap">X-Version</code>, or <code class="nowrap">X-AspNet-Version</code>) || <code class="nowrap">X-Powered-By: PHP/5.4.0</code>
+|-
+|X-Request-ID,<br />X-Correlation-ID<ref name="stackoverflow1"/>
+|Correlates HTTP requests between a client and server.
+|<code class="nowrap">X-Request-ID: f058ebd6-02f7-4d3f-942e-904344e8cde5</code>
+|-
+| X-UA-Compatible<ref>{{cite web|url=http://msdn.microsoft.com/en-us/library/ie/cc288325%28v=vs.85%29.aspx#SetMode |title=Defining Document Compatibility: Specifying Document Compatibility Modes |date=2011-04-01 |accessdate=2012-01-24 }}</ref> || Recommends the preferred rendering engine (often a backward-compatibility mode) to use to display the content. Also used to activate [[Chrome Frame]] in Internet Explorer. || <code class="nowrap">X-UA-Compatible: IE=EmulateIE7</code><br><code class="nowrap">X-UA-Compatible: IE=edge</code><br><code class="nowrap">X-UA-Compatible: Chrome=1</code>
+|-
+| X-XSS-Protection<ref>{{cite web|url=http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-iv-the-xss-filter.aspx |title=IE8 Security Part IV: The XSS Filter |author=Eric Lawrence |date=2008-07-02 |accessdate=2010-09-30}}</ref> || [[Cross-site scripting]] (XSS) filter ||  <code class="nowrap">X-XSS-Protection: 1; mode=block</code>
+|}
