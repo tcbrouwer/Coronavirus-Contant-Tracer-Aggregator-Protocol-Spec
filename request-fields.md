@@ -30,7 +30,7 @@ Request fields
 |             | "wikilink") |             |             |             
 |             | .           |             |             |             
 +-------------+-------------+-------------+-------------+-------------+
-| Accept-Char | Character   | `Accept-Cha | Permanent   | 
+| Accept-Char | Character   | `Accept-Cha | Permanent   | `Accept-Charset: utf-8`
 | set         | sets that   | rset: utf-8 |             | 
 |             | are         | `           |             | 
 |             | acceptable. |             |             | 
