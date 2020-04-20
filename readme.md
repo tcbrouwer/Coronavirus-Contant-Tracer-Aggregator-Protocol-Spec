@@ -41,11 +41,11 @@ Response:
 
 ### Request fields
 
-See request-fields.md
+See [request-fields.md](request-fields.md)
 
 ### Response fields
 
-See response-fields.md
+See [response-fields.md](response-fields.md)
 
 ## /exposed/filter
 
