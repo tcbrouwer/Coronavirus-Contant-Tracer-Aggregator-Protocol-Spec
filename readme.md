@@ -1,4 +1,4 @@
-# DP3T HTTP Implementation Profile
+# Coronavirus Contant Tracer HTTP Implementation Profile
 
 ## Overview for app developers
 
