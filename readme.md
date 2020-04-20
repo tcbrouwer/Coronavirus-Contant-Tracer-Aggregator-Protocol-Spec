@@ -1,4 +1,4 @@
-# Coronavirus Contant Tracer HTTP Implementation Profile
+# Coronavirus Contant Tracer Aggregator Protocol Spec
 
 ## Overview for app developers
 
