@@ -1,8 +1,9 @@
-Response fields {#response_fields}
+Response fields
 ---------------
 
-### Standard response fields {#standard_response_fields}
+### Standard response fields
 
+```
 +-------------+-------------+-------------+-------------+-------------+
 | Field name  | Description | Example     | Status      | Standard    |
 +=============+=============+=============+=============+=============+
@@ -614,9 +615,11 @@ Response fields {#response_fields}
 |             | any         |             |             |             |
 |             | location    |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
+```
 
-### Common non-standard response fields {#common_non_standard_response_fields}
+### Common non-standard response fields 
 
+```
 +-----------------------+-----------------------+-----------------------+
 | Field name            | Description           | Example               |
 +=======================+=======================+=======================+
@@ -724,124 +727,4 @@ Response fields {#response_fields}
 |                       | (XSS) filter          |                       |
 +-----------------------+-----------------------+-----------------------+
 
-[^1]: 
-
-[^2]: `{{cite web|url=http://tools.ietf.org/html/rfc5789#section-3.1 |title=RFC 5789 |accessdate=2014-12-24}}`{=mediawiki}
-
-[^3]: 
-
-[^4]: 
-
-[^5]: `{{cite web|url=http://tools.ietf.org/html/rfc6266 |title=RFC 6266 |accessdate=2015-03-13}}`{=mediawiki}
-
-[^6]: `{{cite web|url=https://tools.ietf.org/html/rfc7231#section-3.1.3.2 |title=RFC 7231 - Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content |publisher=Tools.ietf.org |date= |accessdate=2017-12-11}}`{=mediawiki}
-
-[^7]: 
-
-[^8]: `{{cite web|url=http://ronwilliams.io/blog/post/rfc7231-compliant-http-date-headers |title=RFC7231 Compliant HTTP Date Headers}}`{=mediawiki}
-
-[^9]: 
-
-[^10]: 
-
-[^11]: [Indicate the canonical version of a URL by responding with the
-    Link rel=\"canonical\" HTTP
-    header](https://support.google.com/webmasters/bin/answer.py?hl=en&answer=139394)
-    Retrieved: 2012-02-09
-
-[^12]: W3C [P3P Work Suspended](http://www.w3.org/P3P)
-
-[^13]: `{{cite web | url=http://www.rfc-editor.org/rfc/rfc7469.txt | title=Public Key Pinning Extension for HTTP | publisher=IETF | accessdate=17 April 2015}}`{=mediawiki}
-
-[^14]: `{{cite web|url=http://tools.ietf.org/html/rfc7231#section-7.1.3|title=Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content|accessdate=2014-07-24}}`{=mediawiki}
-
-[^15]: 
-
-[^16]: 
-
-[^17]: `{{cite web|url=https://tools.ietf.org/html/rfc7034|title=HTTP Header Field X-Frame-Options |year=2013 |publisher=IETF |accessdate=2014-06-12}}`{=mediawiki}
-
-[^18]: `{{cite web|url=http://www.w3.org/TR/CSP11/#frame-ancestors-and-frame-options |title=Content Security Policy Level 2 |accessdate=2014-08-02}}`{=mediawiki}
-
-[^19]: 
-
-[^20]: `{{cite web|url=http://tools.ietf.org/html/rfc5789#section-3.1 |title=RFC 5789 |accessdate=2014-12-24}}`{=mediawiki}
-
-[^21]: 
-
-[^22]: 
-
-[^23]: `{{cite web|url=http://tools.ietf.org/html/rfc6266 |title=RFC 6266 |accessdate=2015-03-13}}`{=mediawiki}
-
-[^24]: `{{cite web|url=https://tools.ietf.org/html/rfc7231#section-3.1.3.2 |title=RFC 7231 - Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content |publisher=Tools.ietf.org |date= |accessdate=2017-12-11}}`{=mediawiki}
-
-[^25]: 
-
-[^26]: `{{cite web|url=http://ronwilliams.io/blog/post/rfc7231-compliant-http-date-headers |title=RFC7231 Compliant HTTP Date Headers}}`{=mediawiki}
-
-[^27]: 
-
-[^28]: 
-
-[^29]: [Indicate the canonical version of a URL by responding with the
-    Link rel=\"canonical\" HTTP
-    header](https://support.google.com/webmasters/bin/answer.py?hl=en&answer=139394)
-    Retrieved: 2012-02-09
-
-[^30]: W3C [P3P Work Suspended](http://www.w3.org/P3P)
-
-[^31]: `{{cite web | url=http://www.rfc-editor.org/rfc/rfc7469.txt | title=Public Key Pinning Extension for HTTP | publisher=IETF | accessdate=17 April 2015}}`{=mediawiki}
-
-[^32]: `{{cite web|url=http://tools.ietf.org/html/rfc7231#section-7.1.3|title=Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content|accessdate=2014-07-24}}`{=mediawiki}
-
-[^33]: 
-
-[^34]: 
-
-[^35]: `{{cite web|url=https://tools.ietf.org/html/rfc7034|title=HTTP Header Field X-Frame-Options |year=2013 |publisher=IETF |accessdate=2014-06-12}}`{=mediawiki}
-
-[^36]: `{{cite web|url=http://www.w3.org/TR/CSP11/#frame-ancestors-and-frame-options |title=Content Security Policy Level 2 |accessdate=2014-08-02}}`{=mediawiki}
-
-[^37]: `{{cite web|url=http://www.w3.org/TR/CSP/|title=Content Security Policy |publisher=W3C |year=2012|accessdate=28 April 2017}}`{=mediawiki}
-
-[^38]: `{{cite web|url=http://tools.ietf.org/html/rfc7230#section-3.1.2|title=Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing|accessdate=2014-07-24}}`{=mediawiki}
-
-[^39]: `{{Cite web|url=https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin|title=Timing-Allow-Origin|website=Mozilla Developer Network|language=en-US|access-date=2018-01-25}}`{=mediawiki}
-
-[^40]: `{{cite web|url=https://developer.mozilla.org/en-US/docs/Web/HTTP/Configuring_servers_for_Ogg_media#Serve_X-Content-Duration_headers |title=Configuring servers for Ogg media |date=2014-05-26 |accessdate=2015-01-03}}`{=mediawiki}
-
-[^41]: `{{cite web|url=http://blogs.msdn.com/b/ie/archive/2008/09/02/ie8-security-part-vi-beta-2-update.aspx |title=IE8 Security Part VI: Beta 2 Update |author=Eric Lawrence |date=2008-09-03 |accessdate=2010-09-28}}`{=mediawiki}
-
-[^42]: `{{cite web|url=https://code.google.com/chrome/extensions/hosting.html |title=Hosting - Google Chrome Extensions - Google Code |accessdate=2012-06-14}}`{=mediawiki}
-
-[^43]: `{{cite web |url=https://fetch.spec.whatwg.org/#x-content-type-options-header |title=Fetch standard |last1=van Kesteren |first1=Anne |date=2016-08-26 |website=WHATWG |access-date=2016-08-26 |url-status=live |archive-url=https://web.archive.org/web/20160826132911/https://fetch.spec.whatwg.org/#x-content-type-options-header |archive-date=2016-08-26}}`{=mediawiki}
-
-[^44]: `{{cite web|url=https://stackoverflow.com/questions/1288338/why-does-asp-net-framework-add-the-x-powered-byasp-net-http-header-in-response |title=Why does ASP.NET framework add the 'X-Powered-By:ASP.NET' HTTP Header in responses? - Stack Overflow |accessdate=2010-09-30}}`{=mediawiki}
-
-[^45]: 
-
-[^46]: `{{cite web|url=http://msdn.microsoft.com/en-us/library/ie/cc288325%28v=vs.85%29.aspx#SetMode |title=Defining Document Compatibility: Specifying Document Compatibility Modes |date=2011-04-01 |accessdate=2012-01-24 }}`{=mediawiki}
-
-[^47]: `{{cite web|url=http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-iv-the-xss-filter.aspx |title=IE8 Security Part IV: The XSS Filter |author=Eric Lawrence |date=2008-07-02 |accessdate=2010-09-30}}`{=mediawiki}
-
-[^48]: `{{cite web|url=http://www.w3.org/TR/CSP/|title=Content Security Policy |publisher=W3C |year=2012|accessdate=28 April 2017}}`{=mediawiki}
-
-[^49]: `{{cite web|url=http://tools.ietf.org/html/rfc7230#section-3.1.2|title=Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing|accessdate=2014-07-24}}`{=mediawiki}
-
-[^50]: `{{Cite web|url=https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin|title=Timing-Allow-Origin|website=Mozilla Developer Network|language=en-US|access-date=2018-01-25}}`{=mediawiki}
-
-[^51]: `{{cite web|url=https://developer.mozilla.org/en-US/docs/Web/HTTP/Configuring_servers_for_Ogg_media#Serve_X-Content-Duration_headers |title=Configuring servers for Ogg media |date=2014-05-26 |accessdate=2015-01-03}}`{=mediawiki}
-
-[^52]: `{{cite web|url=http://blogs.msdn.com/b/ie/archive/2008/09/02/ie8-security-part-vi-beta-2-update.aspx |title=IE8 Security Part VI: Beta 2 Update |author=Eric Lawrence |date=2008-09-03 |accessdate=2010-09-28}}`{=mediawiki}
-
-[^53]: `{{cite web|url=https://code.google.com/chrome/extensions/hosting.html |title=Hosting - Google Chrome Extensions - Google Code |accessdate=2012-06-14}}`{=mediawiki}
-
-[^54]: `{{cite web |url=https://fetch.spec.whatwg.org/#x-content-type-options-header |title=Fetch standard |last1=van Kesteren |first1=Anne |date=2016-08-26 |website=WHATWG |access-date=2016-08-26 |url-status=live |archive-url=https://web.archive.org/web/20160826132911/https://fetch.spec.whatwg.org/#x-content-type-options-header |archive-date=2016-08-26}}`{=mediawiki}
-
-[^55]: `{{cite web|url=https://stackoverflow.com/questions/1288338/why-does-asp-net-framework-add-the-x-powered-byasp-net-http-header-in-response |title=Why does ASP.NET framework add the 'X-Powered-By:ASP.NET' HTTP Header in responses? - Stack Overflow |accessdate=2010-09-30}}`{=mediawiki}
-
-[^56]: 
-
-[^57]: `{{cite web|url=http://msdn.microsoft.com/en-us/library/ie/cc288325%28v=vs.85%29.aspx#SetMode |title=Defining Document Compatibility: Specifying Document Compatibility Modes |date=2011-04-01 |accessdate=2012-01-24 }}`{=mediawiki}
-
-[^58]: `{{cite web|url=http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-iv-the-xss-filter.aspx |title=IE8 Security Part IV: The XSS Filter |author=Eric Lawrence |date=2008-07-02 |accessdate=2010-09-30}}`{=mediawiki}
+```

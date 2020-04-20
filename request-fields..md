@@ -3,6 +3,7 @@ Request fields {#request_fields}
 
 ### Standard request fields {#standard_request_fields}
 
+```
 +-------------+-------------+-------------+-------------+-------------+
 | Name        | Description | Example     | Status      | Standard    |
 +=============+=============+=============+=============+=============+
@@ -601,12 +602,10 @@ Request fields {#request_fields}
 |             | entity      |             |             |             |
 |             | body.       |             |             |             |
 +-------------+-------------+-------------+-------------+-------------+
-
-```{=mediawiki}
-{{anchor|Common non-standard request headers}}
 ```
-### Common non-standard request fields {#common_non_standard_request_fields}
+### Common non-standard request fields
 
+```
 +-----------------------+-----------------------+-----------------------+
 | Field name            | Description           | Example               |
 +=======================+=======================+=======================+
@@ -827,147 +826,4 @@ Request fields {#request_fields}
 |                       | saving mode in their  |                       |
 |                       | browser.              |                       |
 +-----------------------+-----------------------+-----------------------+
-
-[^1]: `{{cite IETF|rfc=3229}}`{=mediawiki}
-
-[^2]: `{{cite web|url=https://www.w3.org/TR/cors/ |title=Cross-Origin Resource Sharing |accessdate=2017-07-24}}`{=mediawiki}
-
-[^3]: `{{cite web|url=http://tools.ietf.org/html/rfc7231#appendix-B|title=Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content|accessdate=2015-06-03}}`{=mediawiki}
-
-[^4]: `{{Cite web|url=https://www.iana.org/assignments/message-headers/message-headers.xml|title=Message Headers|website=www.iana.org|access-date=2018-11-26}}`{=mediawiki}
-
-[^5]: `{{Cite web|url=https://httpwg.org/specs/rfc7540.html#Http2SettingsHeader|title=Hypertext Transfer Protocol Version 2 (HTTP/2)|website=httpwg.org|language=en|access-date=2019-02-22|date=2015-05-30}}`{=mediawiki}
-
-[^6]: 
-
-[^7]: 
-
-[^8]: 
-
-[^9]: 
-
-[^10]: `{{cite IETF|rfc=3229}}`{=mediawiki}
-
-[^11]: `{{cite web|url=https://www.w3.org/TR/cors/ |title=Cross-Origin Resource Sharing |accessdate=2017-07-24}}`{=mediawiki}
-
-[^12]: `{{cite web|url=http://tools.ietf.org/html/rfc7231#appendix-B|title=Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content|accessdate=2015-06-03}}`{=mediawiki}
-
-[^13]: `{{Cite web|url=https://www.iana.org/assignments/message-headers/message-headers.xml|title=Message Headers|website=www.iana.org|access-date=2018-11-26}}`{=mediawiki}
-
-[^14]: `{{Cite web|url=https://httpwg.org/specs/rfc7540.html#Http2SettingsHeader|title=Hypertext Transfer Protocol Version 2 (HTTP/2)|website=httpwg.org|language=en|access-date=2019-02-22|date=2015-05-30}}`{=mediawiki}
-
-[^15]: 
-
-[^16]: 
-
-[^17]: 
-
-[^18]: 
-
-[^19]: `{{cite web|title=Upgrade Insecure Requests - W3C Candidate Recommendation|url=https://www.w3.org/TR/upgrade-insecure-requests/#preference|website=W3C|accessdate=14 January 2016|date=8 October 2015}}`{=mediawiki}
-
-[^20]: 
-
-[^21]: `{{cite web|url=http://blog.sidstamm.com/2011/01/try-out-do-not-track-http-header.html |title=Try out the "Do Not Track" HTTP header |accessdate=2011-01-31}}`{=mediawiki}
-
-[^22]: `{{cite web|url=http://blogs.msdn.com/b/ie/archive/2011/03/14/web-tracking-protection-minimum-standards-and-opportunities-to-innovate.aspx |title=Web Tracking Protection: Minimum Standards and Opportunities to Innovate |accessdate=2011-03-24}}`{=mediawiki}
-
-[^23]: IETF [Do Not Track: A Universal Third-Party Web Tracking Opt
-    Out](http://tools.ietf.org/html/draft-mayer-do-not-track-00) March
-    7, 2011
-
-[^24]: W3C [Tracking Preference Expression
-    (DNT)](http://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html),
-    January 26, 2012
-
-[^25]: `{{cite web|url=http://wiki.squid-cache.org/SquidFaq/ConfiguringSquid#head-3518b69c63e221cc3cd7885415e365ffaf3dd27f |title=SquidFaq/ConfiguringSquid - Squid Web Proxy Wiki |author=Amos Jeffries |date=2010-07-02 |accessdate=2009-09-10}}`{=mediawiki}
-
-[^26]: `{{cite web|url=http://httpd.apache.org/docs/2.2/mod/mod_proxy.html#x-headers |title=mod_proxy - Apache HTTP Server Version 2.2|author=The Apache Software Foundation|accessdate=2014-11-12}}`{=mediawiki}
-
-[^27]: `{{cite web|url=http://www.geekisp.com/faq/6_65_en.html |title=How do I adjust my SSL site to work with GeekISP's loadbalancer? |author=Dave Steinberg |date=2007-04-10 |accessdate=2010-09-30}}`{=mediawiki}
-
-[^28]: `{{cite web|url=https://technet.microsoft.com/en-us/library/aa997519(v=exchg.65).aspx |title=Helping to Secure Communication: Client to Front-End Server |date=2006-07-27 |accessdate=2012-04-23}}`{=mediawiki}
-
-[^29]: `{{cite web|url=https://opensocial.github.io/spec/2.5.1/Core-API-Server.xml#rfc.section.2.1.1.1 |title=OpenSocial Core API Server Specification 2.5.1 |accessdate=2014-10-08}}`{=mediawiki}
-
-[^30]: `{{cite web|url=http://developer.att.com/developer/forward.jsp?passedItemId=5300270 |title=ATT Device ID |accessdate=2012-01-14}}`{=mediawiki}
-
-[^31]: `{{cite web|url=http://www.developershome.com/wap/detection/detection.asp?page=profileHeader |title=WAP Profile |accessdate=2012-01-14}}`{=mediawiki}
-
-[^32]: `{{cite web |url=https://jdebp.eu/FGA/web-proxy-connection-header.html |title=The Proxy-Connection: header is a mistake in how some web browsers use HTTP. |accessdate=2018-01-16| last=de Boyne Pollard| first=Jonathan|year=2007 }}`{=mediawiki}
-
-[^33]: 
-
-[^34]: `{{cite web|url=https://www.eff.org/deeplinks/2014/11/verizon-x-uidh|title=Verizon Injecting Perma-Cookies to Track Mobile Customers, Bypassing Privacy Controls|publisher=[[Electronic Frontier Foundation]]|accessdate=2014-01-19}}`{=mediawiki}
-
-[^35]: `{{cite web|url=http://lessonslearned.org/sniff|title=Checking known AT&T, Verizon, Sprint, Bell Canada & Vodacom Unique Identifier beacons|accessdate=2014-01-19}}`{=mediawiki}
-
-[^36]: `{{cite web|url=https://www.washingtonpost.com/business/technology/verizon-atandt-tracking-their-users-with-super-cookies/2014/11/03/7bbbf382-6395-11e4-bb14-4cfea1e742d5_story.html|title=Verizon, AT&T tracking their users with 'supercookies'|author=Craig Timberg|publisher=The Washington Post|accessdate=2014-01-19}}`{=mediawiki}
-
-[^37]: `{{cite web|url=https://help.sap.com/saphelp_nw74/helpdata/en/b3/5c22518bc72214e10000000a44176d/content.htm|title=SAP Cross-Site Request Forgery Protection|publisher=[[SAP SE]]|accessdate=2015-01-20}}`{=mediawiki}
-
-[^38]: `{{cite web|url=https://docs.djangoproject.com/en/1.7/ref/contrib/csrf/|title=Django Cross Site Request Forgery protection|publisher=[[Django (web framework)]]|accessdate=2015-01-20|archive-url=https://web.archive.org/web/20150120134602/https://docs.djangoproject.com/en/1.7/ref/contrib/csrf/|archive-date=January 20, 2015|url-status=dead}}`{=mediawiki}
-
-[^39]: `{{cite web|url=https://docs.angularjs.org/api/ng/service/$http#cross-site-request-forgery-xsrf-protection|title=Angular Cross Site Request Forgery (XSRF) Protection|publisher=[[AngularJS]]|accessdate=2015-01-20}}`{=mediawiki}
-
-[^40]: `{{cite web|url=https://stackoverflow.com/questions/25433258/what-is-the-x-request-id-http-header|title=What is the X-REQUEST-ID http header?|website=stackoverflow.com|access-date=2016-05-19}}`{=mediawiki}
-
-[^41]: `{{cite web|url=https://devcenter.heroku.com/articles/http-request-id|title=HTTP Request IDs|website=devcenter.heroku.com|access-date=2018-02-06}}`{=mediawiki}
-
-[^42]: `{{Cite news|url=https://blog.rapid7.com/2016/12/23/the-value-of-correlation-ids/|title=The Value of Correlation IDs|date=2016-12-23|work=Rapid7 Blog|access-date=2018-04-13|language=en}}`{=mediawiki}
-
-[^43]: `{{Cite web|url=http://hilton.org.uk/blog/microservices-correlation-id|title=Correlation IDs for microservices architectures - Peter Hilton|last=Hilton|first=Peter|website=hilton.org.uk|language=en|access-date=2018-04-13}}`{=mediawiki}
-
-[^44]: `{{cite web|title=Upgrade Insecure Requests - W3C Candidate Recommendation|url=https://www.w3.org/TR/upgrade-insecure-requests/#preference|website=W3C|accessdate=14 January 2016|date=8 October 2015}}`{=mediawiki}
-
-[^45]: 
-
-[^46]: `{{cite web|url=http://blog.sidstamm.com/2011/01/try-out-do-not-track-http-header.html |title=Try out the "Do Not Track" HTTP header |accessdate=2011-01-31}}`{=mediawiki}
-
-[^47]: `{{cite web|url=http://blogs.msdn.com/b/ie/archive/2011/03/14/web-tracking-protection-minimum-standards-and-opportunities-to-innovate.aspx |title=Web Tracking Protection: Minimum Standards and Opportunities to Innovate |accessdate=2011-03-24}}`{=mediawiki}
-
-[^48]: IETF [Do Not Track: A Universal Third-Party Web Tracking Opt
-    Out](http://tools.ietf.org/html/draft-mayer-do-not-track-00) March
-    7, 2011
-
-[^49]: W3C [Tracking Preference Expression
-    (DNT)](http://www.w3.org/2011/tracking-protection/drafts/tracking-dnt.html),
-    January 26, 2012
-
-[^50]: `{{cite web|url=http://wiki.squid-cache.org/SquidFaq/ConfiguringSquid#head-3518b69c63e221cc3cd7885415e365ffaf3dd27f |title=SquidFaq/ConfiguringSquid - Squid Web Proxy Wiki |author=Amos Jeffries |date=2010-07-02 |accessdate=2009-09-10}}`{=mediawiki}
-
-[^51]: `{{cite web|url=http://httpd.apache.org/docs/2.2/mod/mod_proxy.html#x-headers |title=mod_proxy - Apache HTTP Server Version 2.2|author=The Apache Software Foundation|accessdate=2014-11-12}}`{=mediawiki}
-
-[^52]: `{{cite web|url=http://www.geekisp.com/faq/6_65_en.html |title=How do I adjust my SSL site to work with GeekISP's loadbalancer? |author=Dave Steinberg |date=2007-04-10 |accessdate=2010-09-30}}`{=mediawiki}
-
-[^53]: `{{cite web|url=https://technet.microsoft.com/en-us/library/aa997519(v=exchg.65).aspx |title=Helping to Secure Communication: Client to Front-End Server |date=2006-07-27 |accessdate=2012-04-23}}`{=mediawiki}
-
-[^54]: `{{cite web|url=https://opensocial.github.io/spec/2.5.1/Core-API-Server.xml#rfc.section.2.1.1.1 |title=OpenSocial Core API Server Specification 2.5.1 |accessdate=2014-10-08}}`{=mediawiki}
-
-[^55]: `{{cite web|url=http://developer.att.com/developer/forward.jsp?passedItemId=5300270 |title=ATT Device ID |accessdate=2012-01-14}}`{=mediawiki}
-
-[^56]: `{{cite web|url=http://www.developershome.com/wap/detection/detection.asp?page=profileHeader |title=WAP Profile |accessdate=2012-01-14}}`{=mediawiki}
-
-[^57]: `{{cite web |url=https://jdebp.eu/FGA/web-proxy-connection-header.html |title=The Proxy-Connection: header is a mistake in how some web browsers use HTTP. |accessdate=2018-01-16| last=de Boyne Pollard| first=Jonathan|year=2007 }}`{=mediawiki}
-
-[^58]: 
-
-[^59]: `{{cite web|url=https://www.eff.org/deeplinks/2014/11/verizon-x-uidh|title=Verizon Injecting Perma-Cookies to Track Mobile Customers, Bypassing Privacy Controls|publisher=[[Electronic Frontier Foundation]]|accessdate=2014-01-19}}`{=mediawiki}
-
-[^60]: `{{cite web|url=http://lessonslearned.org/sniff|title=Checking known AT&T, Verizon, Sprint, Bell Canada & Vodacom Unique Identifier beacons|accessdate=2014-01-19}}`{=mediawiki}
-
-[^61]: `{{cite web|url=https://www.washingtonpost.com/business/technology/verizon-atandt-tracking-their-users-with-super-cookies/2014/11/03/7bbbf382-6395-11e4-bb14-4cfea1e742d5_story.html|title=Verizon, AT&T tracking their users with 'supercookies'|author=Craig Timberg|publisher=The Washington Post|accessdate=2014-01-19}}`{=mediawiki}
-
-[^62]: `{{cite web|url=https://help.sap.com/saphelp_nw74/helpdata/en/b3/5c22518bc72214e10000000a44176d/content.htm|title=SAP Cross-Site Request Forgery Protection|publisher=[[SAP SE]]|accessdate=2015-01-20}}`{=mediawiki}
-
-[^63]: `{{cite web|url=https://docs.djangoproject.com/en/1.7/ref/contrib/csrf/|title=Django Cross Site Request Forgery protection|publisher=[[Django (web framework)]]|accessdate=2015-01-20|archive-url=https://web.archive.org/web/20150120134602/https://docs.djangoproject.com/en/1.7/ref/contrib/csrf/|archive-date=January 20, 2015|url-status=dead}}`{=mediawiki}
-
-[^64]: `{{cite web|url=https://docs.angularjs.org/api/ng/service/$http#cross-site-request-forgery-xsrf-protection|title=Angular Cross Site Request Forgery (XSRF) Protection|publisher=[[AngularJS]]|accessdate=2015-01-20}}`{=mediawiki}
-
-[^65]: `{{cite web|url=https://stackoverflow.com/questions/25433258/what-is-the-x-request-id-http-header|title=What is the X-REQUEST-ID http header?|website=stackoverflow.com|access-date=2016-05-19}}`{=mediawiki}
-
-[^66]: `{{cite web|url=https://devcenter.heroku.com/articles/http-request-id|title=HTTP Request IDs|website=devcenter.heroku.com|access-date=2018-02-06}}`{=mediawiki}
-
-[^67]: `{{Cite news|url=https://blog.rapid7.com/2016/12/23/the-value-of-correlation-ids/|title=The Value of Correlation IDs|date=2016-12-23|work=Rapid7 Blog|access-date=2018-04-13|language=en}}`{=mediawiki}
-
-[^68]: `{{Cite web|url=http://hilton.org.uk/blog/microservices-correlation-id|title=Correlation IDs for microservices architectures - Peter Hilton|last=Hilton|first=Peter|website=hilton.org.uk|language=en|access-date=2018-04-13}}`{=mediawiki}
+```
