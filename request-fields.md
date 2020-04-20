@@ -1,7 +1,7 @@
-Request fields {#request_fields}
+Request fields
 --------------
 
-### Standard request fields {#standard_request_fields}
+### Standard request fields
 
 ```
 +-------------+-------------+-------------+-------------+-------------+
